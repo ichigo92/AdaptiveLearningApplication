@@ -16,6 +16,7 @@ namespace AdaptiveLearningApplication.Models
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<QuizModel> Quiz { get; set; }
     }
 
     [Table("UserProfile")]
@@ -28,6 +29,8 @@ namespace AdaptiveLearningApplication.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
+        //[Display(AutoGenerateField = false)]
+        //public string LoginType { get; set; }
     }
 
     public class RegisterExternalLoginModel
@@ -87,6 +90,10 @@ namespace AdaptiveLearningApplication.Models
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email", Prompt = "Email")]
         public string Email { get; set; }
+
+        //[Display(AutoGenerateField = false)]
+        //[ScaffoldColumn(false)]
+        //public string LoginType { get; set; }
 
         [Required]
         [Display(Name = "Username", Prompt = "Username")]

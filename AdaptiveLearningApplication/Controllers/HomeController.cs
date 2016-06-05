@@ -28,5 +28,19 @@ namespace AdaptiveLearningApplication.Controllers
 
             return View();
         }
+
+        public ActionResult AdminDashboard()
+        {
+            ViewBag.Message = "Your Admin Dashboard page.";
+
+            return View();
+        }
+
+        public ActionResult TeacherDashboard()
+        {
+            ViewBag.Message = "Your Teacher Dashboard page.";
+
+            return View();
+        }
     }
 }

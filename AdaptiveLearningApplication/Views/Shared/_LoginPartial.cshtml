@@ -5,32 +5,28 @@
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
 
-@if (!Request.IsAuthenticated) {
-    @*<ul class="nav navbar-nav  navbar-right custom_font">*@
-        <li><a href="#faculty-sec">SIGNIN</a></li>
-        <li><a href="#course-sec">SIGNUP</a></li>
+@if (!Request.IsAuthenticated)
+{
+@*<ul class="nav navbar-nav  navbar-right custom_font">*@
+    <li><a href="#faculty-sec">SIGNIN</a></li>
+    <li><a href="#course-sec">SIGNUP</a></li>
 @*    </ul><!--end-login-nav-->*@
     
-} else {
-    <ul class="nav navbar-nav navbar-right custom_font">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+}
+else
+{
+    <li>@Html.ActionLink("ADMIN DASHBOARD", "AdminDashboard", "Home")</li>    
+    <li><a><span class="glyphicon glyphicon-user"></span>&nbsp;WELCOME&nbsp;@User.Identity.Name.ToUpper()</a></li>
+    <li style="margin-top:17px">@using (Html.BeginForm("LogOff", "Account", FormMethod.Post))
+        {
+        @Html.AntiForgeryToken()
+        <a href="javascript:document.getElementById('logoutForm').submit()" id="logout">LOG OUT</a>
+        }
 
-            <span class="glyphicon glyphicon-user"></span>&nbsp;Welcome&nbsp;@User.Identity.Name<strong class="caret"></strong></a>
+    </li>
 
-            <ul class="dropdown-menu">
-                @*<li><a href="Chat.aspx" id="start_chat">Start Chatting!!</a></li>*@
-                <li>@Html.ActionLink("Admin Dashboard", "Chat", "Home")</li>
-                <li>@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <a href="javascript:document.getElementById('logoutForm').submit()" id="logout">Log Out</a>
-                    }
-                </li>
-				@*<li><asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/Default.aspx"/></li>*@
-            </ul>
-        </li>
-    </ul>
+    
+   
 }
 @*@if (Request.IsAuthenticated) {
     <text>

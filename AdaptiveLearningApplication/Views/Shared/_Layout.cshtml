@@ -25,7 +25,7 @@
 
             <div class="navbar-collapse collapse move-me">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#home">HOME</a></li>
+                    <li>@Html.ActionLink("HOME","Index")</li>
                     <li><a href="#features-sec">FEATURES</a></li>
                     @Html.Partial("_LoginPartial")
                     <li><a href="#contact-sec">CONTACT</a></li>
@@ -87,7 +87,6 @@
     @Scripts.Render("~/bundles/jqueryval")
     @RenderSection("scripts", required: false)
     @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
     @Scripts.Render("~/bundles/jqueryui")
 </body>
 </html>
