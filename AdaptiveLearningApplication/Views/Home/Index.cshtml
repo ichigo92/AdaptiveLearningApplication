@@ -103,7 +103,8 @@
 </div>
 
 <!-- FEATURES SECTION END-->
-
+@if (!Request.IsAuthenticated)
+{
 <div id="faculty-sec">
     <div class="container set-pad">
         <div class="row text-center">
@@ -156,6 +157,7 @@
     </div>
 </div>
 <!-- FACULTY SECTION END-->
+}
 <!--modal window-->
 <div class="modal fade" id="login_modal">
     <div class="modal-dialog" style="width: 760px;">
@@ -190,7 +192,8 @@
     <!--end modal-dialog-->
 </div>
 <!--end modal fade-->
-
+@if (!Request.IsAuthenticated)
+{
 <div id="course-sec" class="container set-pad">
     <div class="row text-center">
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
@@ -205,6 +208,7 @@
 
 </div>
 <!-- COURSES SECTION END-->
+}
 <div id="contact-sec">
     <div class="overlay">
         <div class="container set-pad">
