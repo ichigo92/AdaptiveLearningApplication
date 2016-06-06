@@ -17,8 +17,7 @@ else
 {
     <li>@Html.ActionLink("ADMIN DASHBOARD", "AdminDashboard", "Home")</li>    
     <li><a><span class="glyphicon glyphicon-user"></span>&nbsp;WELCOME&nbsp;@User.Identity.Name.ToUpper()</a></li>
-    <li style="margin-top:17px">@using (Html.BeginForm("LogOff", "Account", FormMethod.Post))
-        {
+    <li style="margin-top:17px">@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })){
         @Html.AntiForgeryToken()
         <a href="javascript:document.getElementById('logoutForm').submit()" id="logout">LOG OUT</a>
         }
