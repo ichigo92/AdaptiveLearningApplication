@@ -5,70 +5,72 @@
 }
 
 <h2>Create</h2>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Add Quiz</legend>
 
-    <fieldset>
-        <legend>QuizModel</legend>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.QuizName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.QuizName)
+                @Html.ValidationMessageFor(model => model.QuizName)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.QuizName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.QuizName)
-            @Html.ValidationMessageFor(model => model.QuizName)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedDate)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CreatedDate)
+                @Html.ValidationMessageFor(model => model.CreatedDate)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CreatedDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CreatedDate)
-            @Html.ValidationMessageFor(model => model.CreatedDate)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.NumberOfQuestions)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.NumberOfQuestions)
+                @Html.ValidationMessageFor(model => model.NumberOfQuestions)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.NumberOfQuestions)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.NumberOfQuestions)
-            @Html.ValidationMessageFor(model => model.NumberOfQuestions)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.HighestMarks)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.HighestMarks)
+                @Html.ValidationMessageFor(model => model.HighestMarks)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.HighestMarks)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.HighestMarks)
-            @Html.ValidationMessageFor(model => model.HighestMarks)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Duration)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Duration)
+                @Html.ValidationMessageFor(model => model.Duration)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Duration)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Duration)
-            @Html.ValidationMessageFor(model => model.Duration)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreatedBy)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CreatedBy)
+                @Html.ValidationMessageFor(model => model.CreatedBy)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CreatedBy)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CreatedBy)
-            @Html.ValidationMessageFor(model => model.CreatedBy)
-        </div>
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 </div>
 
 @section Scripts {
