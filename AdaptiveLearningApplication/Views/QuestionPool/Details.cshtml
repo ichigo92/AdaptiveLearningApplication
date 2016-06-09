@@ -1,0 +1,78 @@
+﻿@model AdaptiveLearningApplication.Models.QuestionPoolModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>QuestionPoolModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Question)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Question)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QuestionOptionOne)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionOptionOne)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QuestionOptionTwo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionOptionTwo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QuestionOptionThree)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionOptionThree)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QuestionOptionFour)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionOptionFour)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Answer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Answer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Subject)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Subject)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Marks)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Marks)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DifficultyLevel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DifficultyLevel)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.QuestionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

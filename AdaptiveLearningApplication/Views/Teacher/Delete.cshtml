@@ -1,0 +1,54 @@
+﻿@model AdaptiveLearningApplication.Models.Teacher
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Teacher</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TeacherFirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeacherFirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TeacherLastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeacherLastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TeacherAge)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeacherAge)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TeacherGender)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeacherGender)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TeacherSubject)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeacherSubject)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

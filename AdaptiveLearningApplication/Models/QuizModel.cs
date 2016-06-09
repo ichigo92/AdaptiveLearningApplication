@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -45,4 +46,5 @@ namespace AdaptiveLearningApplication.Models
         [Display(Name = "Created By")]
         public string CreatedBy { get; set; }
     }
+
 }

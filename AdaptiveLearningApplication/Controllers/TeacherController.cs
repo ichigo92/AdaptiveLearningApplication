@@ -9,33 +9,33 @@ using AdaptiveLearningApplication.Models;
 
 namespace AdaptiveLearningApplication.Controllers
 {
-    public class QuizController : Controller
+    public class TeacherController : Controller
     {
         private AdaptiveLearningContext db = new AdaptiveLearningContext();
 
         //
-        // GET: /Quiz/
+        // GET: /Teacher/
 
         public ActionResult Index()
         {
-            return View(db.Quiz.ToList());
+            return View(db.Teacher.ToList());
         }
 
         //
-        // GET: /Quiz/Details/5
+        // GET: /Teacher/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
+            Teacher teacher = db.Teacher.Find(id);
+            if (teacher == null)
             {
                 return HttpNotFound();
             }
-            return View(quizmodel);
+            return View(teacher);
         }
 
         //
-        // GET: /Quiz/Create
+        // GET: /Teacher/Create
 
         public ActionResult Create()
         {
@@ -43,73 +43,73 @@ namespace AdaptiveLearningApplication.Controllers
         }
 
         //
-        // POST: /Quiz/Create
+        // POST: /Teacher/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(QuizModel quizmodel)
+        public ActionResult Create(Teacher teacher)
         {
             if (ModelState.IsValid)
             {
-                db.Quiz.Add(quizmodel);
+                db.Teacher.Add(teacher);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(quizmodel);
+            return View(teacher);
         }
 
         //
-        // GET: /Quiz/Edit/5
+        // GET: /Teacher/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
+            Teacher teacher = db.Teacher.Find(id);
+            if (teacher == null)
             {
                 return HttpNotFound();
             }
-            return View(quizmodel);
+            return View(teacher);
         }
 
         //
-        // POST: /Quiz/Edit/5
+        // POST: /Teacher/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(QuizModel quizmodel)
+        public ActionResult Edit(Teacher teacher)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(quizmodel).State = EntityState.Modified;
+                db.Entry(teacher).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(quizmodel);
+            return View(teacher);
         }
 
         //
-        // GET: /Quiz/Delete/5
+        // GET: /Teacher/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
+            Teacher teacher = db.Teacher.Find(id);
+            if (teacher == null)
             {
                 return HttpNotFound();
             }
-            return View(quizmodel);
+            return View(teacher);
         }
 
         //
-        // POST: /Quiz/Delete/5
+        // POST: /Teacher/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            db.Quiz.Remove(quizmodel);
+            Teacher teacher = db.Teacher.Find(id);
+            db.Teacher.Remove(teacher);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

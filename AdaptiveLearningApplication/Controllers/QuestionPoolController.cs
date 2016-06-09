@@ -9,33 +9,33 @@ using AdaptiveLearningApplication.Models;
 
 namespace AdaptiveLearningApplication.Controllers
 {
-    public class QuizController : Controller
+    public class QuestionPoolController : Controller
     {
         private AdaptiveLearningContext db = new AdaptiveLearningContext();
 
         //
-        // GET: /Quiz/
+        // GET: /QuestionPool/
 
         public ActionResult Index()
         {
-            return View(db.Quiz.ToList());
+            return View(db.QuestionPool.ToList());
         }
 
         //
-        // GET: /Quiz/Details/5
+        // GET: /QuestionPool/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
+            QuestionPoolModel questionpoolmodel = db.QuestionPool.Find(id);
+            if (questionpoolmodel == null)
             {
                 return HttpNotFound();
             }
-            return View(quizmodel);
+            return View(questionpoolmodel);
         }
 
         //
-        // GET: /Quiz/Create
+        // GET: /QuestionPool/Create
 
         public ActionResult Create()
         {
@@ -43,73 +43,73 @@ namespace AdaptiveLearningApplication.Controllers
         }
 
         //
-        // POST: /Quiz/Create
+        // POST: /QuestionPool/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(QuizModel quizmodel)
+        public ActionResult Create(QuestionPoolModel questionpoolmodel)
         {
             if (ModelState.IsValid)
             {
-                db.Quiz.Add(quizmodel);
+                db.QuestionPool.Add(questionpoolmodel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(quizmodel);
+            return View(questionpoolmodel);
         }
 
         //
-        // GET: /Quiz/Edit/5
+        // GET: /QuestionPool/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
+            QuestionPoolModel questionpoolmodel = db.QuestionPool.Find(id);
+            if (questionpoolmodel == null)
             {
                 return HttpNotFound();
             }
-            return View(quizmodel);
+            return View(questionpoolmodel);
         }
 
         //
-        // POST: /Quiz/Edit/5
+        // POST: /QuestionPool/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(QuizModel quizmodel)
+        public ActionResult Edit(QuestionPoolModel questionpoolmodel)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(quizmodel).State = EntityState.Modified;
+                db.Entry(questionpoolmodel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(quizmodel);
+            return View(questionpoolmodel);
         }
 
         //
-        // GET: /Quiz/Delete/5
+        // GET: /QuestionPool/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
+            QuestionPoolModel questionpoolmodel = db.QuestionPool.Find(id);
+            if (questionpoolmodel == null)
             {
                 return HttpNotFound();
             }
-            return View(quizmodel);
+            return View(questionpoolmodel);
         }
 
         //
-        // POST: /Quiz/Delete/5
+        // POST: /QuestionPool/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            db.Quiz.Remove(quizmodel);
+            QuestionPoolModel questionpoolmodel = db.QuestionPool.Find(id);
+            db.QuestionPool.Remove(questionpoolmodel);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

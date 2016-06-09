@@ -16,7 +16,6 @@ namespace AdaptiveLearningApplication.Models
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
-        public DbSet<QuizModel> Quiz { get; set; }
     }
 
     [Table("UserProfile")]

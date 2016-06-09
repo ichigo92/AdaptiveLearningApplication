@@ -4,20 +4,64 @@
 
 <h2>TeacherDashboard</h2>
 <div class="row" style="margin-bottom:473px;">
-    <div class="col col-md-3">
+    <div class="col col-md-2">
     </div>
-    <div class="col col-md-6">
-        <div class="col col-md-3 panel panel-success">
-            <div class="panel-body">
-                @Html.ActionLink("Add Quiz", "Create", "Quiz")
+    <div style="margin-top:25px;" class="col col-md-6">
+        <div class="col col-md-3  panel panel-success">
+            <div class="panel-body" style="margin-left: 36px; cursor:pointer">
+                <div class="row">
+                    <div class="col">
+                        <i class="fa fa-plus fa-5x" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    @Html.ActionLink("Add Quiz", "Create", "Quiz")
+                </div>
             </div>
         </div>
-        <div class="col col-md-3 panel panel-success">
-            <div class="panel-body">
-                @Html.ActionLink("Add Material", "Create", "Quiz")
+        <div class="col col-md-4 col-md-offset-1 panel panel-success">
+            <div class="panel-body" style="margin-left: 55px; cursor:pointer">
+                <div class="row">
+                    <div class="col">
+                        <i class="fa fa-file-pdf-o fa-5x" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        @Html.ActionLink("Add Material", "Create", "Quiz")
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="col col-md-3 col-md-offset-1  panel panel-success">
+            <div class="panel-body" style="margin-left: 36px; cursor:pointer">
+                <div class="row">
+                    <div class="col">
+                        <i class="fa fa-plus fa-5x" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    @Html.ActionLink("Add Questions", "Create", "QuestionPool")
+                </div>
+            </div>
+        </div>
+        <div class="col col-md-3  panel panel-success">
+            <div class="panel-body" style="margin-left: 36px; cursor:pointer">
+                <div class="row">
+                    <div class="col">
+                        <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    @*@Html.ActionLink("Update Profile", "Edit", "Teacher",new { id=1 })*@
+                    <a href="../Teacher/Edit/2">Update Profile</a>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
-    <div class="col col-md-3">
+    <div class="col col-md-2">
     </div>
 </div>

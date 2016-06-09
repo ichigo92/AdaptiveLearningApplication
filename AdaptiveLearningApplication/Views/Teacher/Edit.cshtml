@@ -1,0 +1,70 @@
+﻿@model AdaptiveLearningApplication.Models.Teacher
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Teacher</legend>
+
+        @Html.HiddenFor(model => model.TeacherID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TeacherFirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TeacherFirstName)
+            @Html.ValidationMessageFor(model => model.TeacherFirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TeacherLastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TeacherLastName)
+            @Html.ValidationMessageFor(model => model.TeacherLastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TeacherAge)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TeacherAge)
+            @Html.ValidationMessageFor(model => model.TeacherAge)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TeacherGender)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TeacherGender)
+            @Html.ValidationMessageFor(model => model.TeacherGender)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TeacherSubject)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TeacherSubject)
+            @Html.ValidationMessageFor(model => model.TeacherSubject)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

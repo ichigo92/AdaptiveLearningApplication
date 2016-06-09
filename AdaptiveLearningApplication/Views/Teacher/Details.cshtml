@@ -1,0 +1,50 @@
+﻿@model AdaptiveLearningApplication.Models.Teacher
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Teacher</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TeacherFirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeacherFirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TeacherLastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeacherLastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TeacherAge)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeacherAge)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TeacherGender)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeacherGender)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TeacherSubject)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TeacherSubject)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TeacherID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
