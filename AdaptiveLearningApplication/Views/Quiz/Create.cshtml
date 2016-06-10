@@ -15,51 +15,51 @@
             <legend>Add Quiz</legend>
 
             <div class="editor-label">
-                @Html.LabelFor(model => model.QuizName)
+                @Html.LabelFor(model => model.QuizName,new { @class = "control-label" })
             </div>
             <div class="editor-field">
                 @Html.EditorFor(model => model.QuizName)
-                @Html.ValidationMessageFor(model => model.QuizName)
+                @Html.ValidationMessageFor(model => model.QuizName,"",new { @class = "alert-danger" })
             </div>
 
             <div class="editor-label">
-                @Html.LabelFor(model => model.CreatedDate)
+                @Html.LabelFor(model => model.CreatedDate,new { @class = "control-label" })
             </div>
             <div class="editor-field">
                 @Html.EditorFor(model => model.CreatedDate)
-                @Html.ValidationMessageFor(model => model.CreatedDate)
+                @Html.ValidationMessageFor(model => model.CreatedDate,"",new { @class = "alert-danger" })
             </div>
 
             <div class="editor-label">
-                @Html.LabelFor(model => model.NumberOfQuestions)
+                @Html.LabelFor(model => model.NumberOfQuestions,new { @class = "control-label" })
             </div>
             <div class="editor-field">
                 @Html.EditorFor(model => model.NumberOfQuestions)
-                @Html.ValidationMessageFor(model => model.NumberOfQuestions)
+                @Html.ValidationMessageFor(model => model.NumberOfQuestions,"",new { @class = "alert-danger" })
             </div>
 
             <div class="editor-label">
-                @Html.LabelFor(model => model.HighestMarks)
+                @Html.LabelFor(model => model.HighestMarks,new { @class = "control-label" })
             </div>
             <div class="editor-field">
                 @Html.EditorFor(model => model.HighestMarks)
-                @Html.ValidationMessageFor(model => model.HighestMarks)
+                @Html.ValidationMessageFor(model => model.HighestMarks,"",new { @class = "alert-danger" })
             </div>
 
             <div class="editor-label">
-                @Html.LabelFor(model => model.Duration)
+                @Html.LabelFor(model => model.Duration,new { @class = "control-label" })
             </div>
             <div class="editor-field">
                 @Html.EditorFor(model => model.Duration)
-                @Html.ValidationMessageFor(model => model.Duration)
+                @Html.ValidationMessageFor(model => model.Duration,"",new { @class = "alert-danger" })
             </div>
 
             <div class="editor-label">
-                @Html.LabelFor(model => model.CreatedBy)
+                @Html.LabelFor(model => model.CreatedBy,new { @class = "control-label" })
             </div>
             <div class="editor-field">
                 @Html.EditorFor(model => model.CreatedBy)
-                @Html.ValidationMessageFor(model => model.CreatedBy)
+                @Html.ValidationMessageFor(model => model.CreatedBy,"",new { @class = "alert-danger" })
             </div>
 
             <p>

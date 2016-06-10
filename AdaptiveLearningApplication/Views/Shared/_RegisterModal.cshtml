@@ -28,14 +28,14 @@
                     </div>
                     <div id="collapse1" class="panel-collapse collapse" style="height: 0px;">
                         <div class="panel-body">
-                            @Html.LabelFor(model => model.FirstName)
+                            @Html.LabelFor(model => model.FirstName,new { @class = "control-label" })
                             @Html.EditorFor(model => model.FirstName)
-                            @Html.ValidationMessageFor(model => model.FirstName)<br>
+                            @Html.ValidationMessageFor(model => model.FirstName,"",new { @class = "alert-danger" })<br>
 
-                            @Html.LabelFor(model => model.LastName)
+                            @Html.LabelFor(model => model.LastName,new { @class = "control-label" })
 
                             @Html.EditorFor(model => model.LastName)
-                            @Html.ValidationMessageFor(model => model.LastName)<br>
+                            @Html.ValidationMessageFor(model => model.LastName,"",new { @class = "alert-danger" })<br>
                         </div>
                     </div>
                 </div>
@@ -49,9 +49,9 @@
                     </div>
                     <div id="collapse2" class="panel-collapse collapse" style="height: 0px;">
                         <div class="panel-body">
-                            @Html.LabelFor(model => model.Email)
+                            @Html.LabelFor(model => model.Email,new { @class = "control-label" })
                             @Html.EditorFor(model => model.Email)
-                            @Html.ValidationMessageFor(model => model.Email)<br>
+                            @Html.ValidationMessageFor(model => model.Email,"",new { @class = "alert-danger" })<br>
                             
                         </div>
                     </div>
@@ -66,10 +66,10 @@
                     </div>
                     <div id="collapse4" class="panel-collapse collapse" style="height: 0px;">
                         <div class="panel-body">
-                            @Html.LabelFor(model => model.UserName)
+                            @Html.LabelFor(model => model.UserName,new { @class = "control-label" })
                             
                             @Html.EditorFor(model => model.UserName)
-                            @Html.ValidationMessageFor(model => model.UserName)<br>
+                            @Html.ValidationMessageFor(model => model.UserName,"",new { @class = "alert-danger" })<br>
                         </div>
                     </div>
                 </div>
@@ -83,12 +83,12 @@
                     </div>
                     <div id="collapse3" class="panel-collapse collapse" style="height: 0px;">
                         <div class="panel-body">
-                            @Html.LabelFor(model => model.Password)
+                            @Html.LabelFor(model => model.Password,new { @class = "control-label" })
                             @Html.EditorFor(model => model.Password)
-                            @Html.ValidationMessageFor(model => model.Password)<br>
-                            @Html.LabelFor(model => model.ConfirmPassword)
+                            @Html.ValidationMessageFor(model => model.Password,"",new { @class = "alert-danger" })<br>
+                            @Html.LabelFor(model => model.ConfirmPassword,new { @class = "control-label" })
                             @Html.EditorFor(model => model.ConfirmPassword)
-                            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword,"",new { @class = "alert-danger" })
                             <br>
                         </div>
                     </div>
