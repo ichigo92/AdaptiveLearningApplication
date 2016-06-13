@@ -80,6 +80,9 @@ C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplic
 C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\bin\ru\System.Spatial.resources.dll
 C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.csprojResolveAssemblyReference.cache
+C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.InitialCreate.resources
+C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.StudentTeacherCourseRelationshipAdded.resources
+C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.csproj.GenerateResource.Cache
 C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.dll
 C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.pdb
+C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.csprojResolveAssemblyReference.cache

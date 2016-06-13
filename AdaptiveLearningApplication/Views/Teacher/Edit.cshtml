@@ -1,4 +1,4 @@
-﻿@model AdaptiveLearningApplication.Models.Teacher
+﻿@model AdaptiveLearningApplication.ViewModel.CourseTeachersViewModel
 
 @{
     ViewBag.Title = "Edit";
@@ -13,48 +13,46 @@
     <fieldset>
         <legend>Teacher</legend>
 
-        @Html.HiddenFor(model => model.TeacherID)
+        @Html.HiddenFor(model => model.Teacher.TeacherID)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TeacherFirstName,new { @class = "control-label" })
+            @Html.LabelFor(model => model.Teacher.TeacherFirstName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TeacherFirstName)
-            @Html.ValidationMessageFor(model => model.TeacherFirstName,"",new { @class = "alert-danger" })
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.TeacherLastName,new { @class = "control-label" })
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.TeacherLastName)
-            @Html.ValidationMessageFor(model => model.TeacherLastName,"",new { @class = "alert-danger" })
+            @Html.EditorFor(model => model.Teacher.TeacherFirstName)
+            @Html.ValidationMessageFor(model => model.Teacher.TeacherFirstName)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TeacherAge,new { @class = "control-label" })
+            @Html.LabelFor(model => model.Teacher.TeacherLastName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TeacherAge)
-            @Html.ValidationMessageFor(model => model.TeacherAge,"",new { @class = "alert-danger" })
+            @Html.EditorFor(model => model.Teacher.TeacherLastName)
+            @Html.ValidationMessageFor(model => model.Teacher.TeacherLastName)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TeacherGender,new { @class = "control-label" })
+            @Html.LabelFor(model => model.Teacher.TeacherAge)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TeacherGender)
-            @Html.ValidationMessageFor(model => model.TeacherGender,"",new { @class = "alert-danger" })
+            @Html.EditorFor(model => model.Teacher.TeacherAge)
+            @Html.ValidationMessageFor(model => model.Teacher.TeacherAge)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TeacherSubject,new { @class = "control-label" })
+            @Html.LabelFor(model => model.Teacher.TeacherGender)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TeacherSubject)
-            @Html.ValidationMessageFor(model => model.TeacherSubject,"",new { @class = "alert-danger" })
+            @Html.EditorFor(model => model.Teacher.TeacherGender)
+            @Html.ValidationMessageFor(model => model.Teacher.TeacherGender)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AllCourses,"Course")
+        </div>
+        <div class="editor-field">
+            @Html.ListBoxFor(model => model.SelectedCourses, Model.AllCourses)
+        </div>
         <p>
             <input type="submit" value="Save" />
         </p>

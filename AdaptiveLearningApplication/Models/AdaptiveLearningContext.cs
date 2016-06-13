@@ -11,5 +11,7 @@ namespace AdaptiveLearningApplication.Models
         public DbSet<QuizModel> Quiz { get; set; }
         public DbSet<QuestionPoolModel> QuestionPool { get; set; }
         public DbSet<Teacher> Teacher { get; set; }
+        public DbSet<Course> Course { get; set; }
+        public DbSet<Student> Student { get; set; }
     }
 }

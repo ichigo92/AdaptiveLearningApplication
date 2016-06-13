@@ -38,13 +38,15 @@ namespace AdaptiveLearningApplication.Models
         public int HighestMarks { get; set; }
         
         [Required]
-        [DataType(DataType.Time)]
         [Display(Name = "Duration")]
         public string Duration { get; set; }
 
         [Required]
         [Display(Name = "Created By")]
         public string CreatedBy { get; set; }
+
+
+        public List<QuestionPoolModel> Questions { get; set; }
     }
 
 }

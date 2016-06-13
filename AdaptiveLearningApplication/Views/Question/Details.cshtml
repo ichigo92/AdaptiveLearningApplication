@@ -71,6 +71,13 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.DifficultyLevel)
     </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Quiz.QuizName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Quiz.QuizName)
+    </div>
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.QuestionID }) |

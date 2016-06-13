@@ -9,20 +9,21 @@ using AdaptiveLearningApplication.Models;
 
 namespace AdaptiveLearningApplication.Controllers
 {
-    public class QuestionPoolController : Controller
+    public class QuestionController : Controller
     {
         private AdaptiveLearningContext db = new AdaptiveLearningContext();
 
         //
-        // GET: /QuestionPool/
+        // GET: /Question/
 
         public ActionResult Index()
         {
-            return View(db.QuestionPool.ToList());
+            var questionpool = db.QuestionPool.Include(q => q.Quiz);
+            return View(questionpool.ToList());
         }
 
         //
-        // GET: /QuestionPool/Details/5
+        // GET: /Question/Details/5
 
         public ActionResult Details(int id = 0)
         {
@@ -35,15 +36,16 @@ namespace AdaptiveLearningApplication.Controllers
         }
 
         //
-        // GET: /QuestionPool/Create
+        // GET: /Question/Create
 
         public ActionResult Create()
         {
+            ViewBag.QuizID = new SelectList(db.Quiz, "QuizID", "QuizName");
             return View();
         }
 
         //
-        // POST: /QuestionPool/Create
+        // POST: /Question/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -56,11 +58,12 @@ namespace AdaptiveLearningApplication.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.QuizID = new SelectList(db.Quiz, "QuizID", "QuizName", questionpoolmodel.QuizID);
             return View(questionpoolmodel);
         }
 
         //
-        // GET: /QuestionPool/Edit/5
+        // GET: /Question/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
@@ -69,11 +72,12 @@ namespace AdaptiveLearningApplication.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.QuizID = new SelectList(db.Quiz, "QuizID", "QuizName", questionpoolmodel.QuizID);
             return View(questionpoolmodel);
         }
 
         //
-        // POST: /QuestionPool/Edit/5
+        // POST: /Question/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -85,11 +89,12 @@ namespace AdaptiveLearningApplication.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.QuizID = new SelectList(db.Quiz, "QuizID", "QuizName", questionpoolmodel.QuizID);
             return View(questionpoolmodel);
         }
 
         //
-        // GET: /QuestionPool/Delete/5
+        // GET: /Question/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
@@ -102,7 +107,7 @@ namespace AdaptiveLearningApplication.Controllers
         }
 
         //
-        // POST: /QuestionPool/Delete/5
+        // POST: /Question/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

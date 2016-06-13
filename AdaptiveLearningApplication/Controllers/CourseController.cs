@@ -9,33 +9,33 @@ using AdaptiveLearningApplication.Models;
 
 namespace AdaptiveLearningApplication.Controllers
 {
-    public class QuizController : Controller
+    public class CourseController : Controller
     {
         private AdaptiveLearningContext db = new AdaptiveLearningContext();
 
         //
-        // GET: /Quiz/
+        // GET: /Course/
 
         public ActionResult Index()
         {
-            return View(db.Quiz.ToList());
+            return View(db.Course.ToList());
         }
 
         //
-        // GET: /Quiz/Details/5
+        // GET: /Course/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
+            Course course = db.Course.Find(id);
+            if (course == null)
             {
                 return HttpNotFound();
             }
-            return View(quizmodel);
+            return View(course);
         }
 
         //
-        // GET: /Quiz/Create
+        // GET: /Course/Create
 
         public ActionResult Create()
         {
@@ -43,74 +43,73 @@ namespace AdaptiveLearningApplication.Controllers
         }
 
         //
-        // POST: /Quiz/Create
+        // POST: /Course/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(QuizModel quizmodel)
+        public ActionResult Create(Course course)
         {
             if (ModelState.IsValid)
             {
-                db.Quiz.Add(quizmodel);
-                db.SaveChanges();
-                return RedirectToAction("Create", "QuestionPool", new { id = quizmodel.QuizID });
-                //return RedirectToAction("Index");
-            }
-
-            return View(quizmodel);
-        }
-
-        //
-        // GET: /Quiz/Edit/5
-
-        public ActionResult Edit(int id = 0)
-        {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(quizmodel);
-        }
-
-        //
-        // POST: /Quiz/Edit/5
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(QuizModel quizmodel)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(quizmodel).State = EntityState.Modified;
+                db.Course.Add(course);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(quizmodel);
+
+            return View(course);
         }
 
         //
-        // GET: /Quiz/Delete/5
+        // GET: /Course/Edit/5
 
-        public ActionResult Delete(int id = 0)
+        public ActionResult Edit(int id = 0)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
+            Course course = db.Course.Find(id);
+            if (course == null)
             {
                 return HttpNotFound();
             }
-            return View(quizmodel);
+            return View(course);
         }
 
         //
-        // POST: /Quiz/Delete/5
+        // POST: /Course/Edit/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Course course)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(course).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(course);
+        }
+
+        //
+        // GET: /Course/Delete/5
+
+        public ActionResult Delete(int id = 0)
+        {
+            Course course = db.Course.Find(id);
+            if (course == null)
+            {
+                return HttpNotFound();
+            }
+            return View(course);
+        }
+
+        //
+        // POST: /Course/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            db.Quiz.Remove(quizmodel);
+            Course course = db.Course.Find(id);
+            db.Course.Remove(course);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

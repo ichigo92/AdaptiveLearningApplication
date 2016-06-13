@@ -37,13 +37,6 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.TeacherGender)
     </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.TeacherSubject)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.TeacherSubject)
-    </div>
 </fieldset>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()

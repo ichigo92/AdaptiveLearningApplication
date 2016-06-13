@@ -42,5 +42,16 @@ namespace AdaptiveLearningApplication.Controllers
 
             return View();
         }
+
+        //public ActionResult StudentsToPVDemo(string quizName)
+        //{
+        //    IEnumerable<Quiz> allQuizes = _repository.GetCourses();
+        //    var selectedQuizId = (from c in allQuizes where c.QuizName == quizName select c.QuizId).FirstOrDefault();
+
+        //    IEnumerable<Questions> allQuestions = _repository.GetStudents();
+        //    var questionsInQuiz = allQuestions.Where(s => s.EnrolledCourses.Any(c => c.QuizId == selectedQuizId)).ToList();
+
+        //    return PartialView("StudentPV", questionsInQuiz);
+        //}
     }
 }

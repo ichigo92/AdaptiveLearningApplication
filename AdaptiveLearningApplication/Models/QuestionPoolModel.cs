@@ -20,11 +20,9 @@ namespace AdaptiveLearningApplication.Models
         public string Subject { get; set; }
         public int Marks { get; set; }
         public int DifficultyLevel { get; set; }
-    }
+        
+        public int QuizID { get; set; }
+        public virtual QuizModel Quiz { get; set; }
 
-    public class QuestionPoolDBContext : DbContext
-    {
-        public DbSet<QuestionPoolModel> QuestionPool { get; set; }
     }
-
 }

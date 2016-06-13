@@ -9,108 +9,112 @@ using AdaptiveLearningApplication.Models;
 
 namespace AdaptiveLearningApplication.Controllers
 {
-    public class QuizController : Controller
+    public class StudentController : Controller
     {
         private AdaptiveLearningContext db = new AdaptiveLearningContext();
 
         //
-        // GET: /Quiz/
+        // GET: /Student/
 
         public ActionResult Index()
         {
-            return View(db.Quiz.ToList());
+            var student = db.Student.Include(s => s.Course);
+            return View(student.ToList());
         }
 
         //
-        // GET: /Quiz/Details/5
+        // GET: /Student/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
+            Student student = db.Student.Find(id);
+            if (student == null)
             {
                 return HttpNotFound();
             }
-            return View(quizmodel);
+            return View(student);
         }
 
         //
-        // GET: /Quiz/Create
+        // GET: /Student/Create
 
         public ActionResult Create()
         {
+            ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName");
             return View();
         }
 
         //
-        // POST: /Quiz/Create
+        // POST: /Student/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(QuizModel quizmodel)
+        public ActionResult Create(Student student)
         {
             if (ModelState.IsValid)
             {
-                db.Quiz.Add(quizmodel);
-                db.SaveChanges();
-                return RedirectToAction("Create", "QuestionPool", new { id = quizmodel.QuizID });
-                //return RedirectToAction("Index");
-            }
-
-            return View(quizmodel);
-        }
-
-        //
-        // GET: /Quiz/Edit/5
-
-        public ActionResult Edit(int id = 0)
-        {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(quizmodel);
-        }
-
-        //
-        // POST: /Quiz/Edit/5
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(QuizModel quizmodel)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(quizmodel).State = EntityState.Modified;
+                db.Student.Add(student);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(quizmodel);
+
+            ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName", student.CourseID);
+            return View(student);
         }
 
         //
-        // GET: /Quiz/Delete/5
+        // GET: /Student/Edit/5
 
-        public ActionResult Delete(int id = 0)
+        public ActionResult Edit(int id = 0)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            if (quizmodel == null)
+            Student student = db.Student.Find(id);
+            if (student == null)
             {
                 return HttpNotFound();
             }
-            return View(quizmodel);
+            ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName", student.CourseID);
+            return View(student);
         }
 
         //
-        // POST: /Quiz/Delete/5
+        // POST: /Student/Edit/5
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(student).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName", student.CourseID);
+            return View(student);
+        }
+
+        //
+        // GET: /Student/Delete/5
+
+        public ActionResult Delete(int id = 0)
+        {
+            Student student = db.Student.Find(id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+            return View(student);
+        }
+
+        //
+        // POST: /Student/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            QuizModel quizmodel = db.Quiz.Find(id);
-            db.Quiz.Remove(quizmodel);
+            Student student = db.Student.Find(id);
+            db.Student.Remove(student);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

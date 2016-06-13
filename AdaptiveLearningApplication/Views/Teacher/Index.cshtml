@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table style="margin-bottom:475px;" class="table table-striped table-bordered table-responsive">
+<table>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.TeacherFirstName)
@@ -22,9 +22,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TeacherGender)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TeacherSubject)
         </th>
         <th></th>
     </tr>
@@ -44,7 +41,7 @@
             @Html.DisplayFor(modelItem => item.TeacherGender)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TeacherSubject)
+            @Html.ListBox("Id", new SelectList(item.Course,"CourseID","CourseName"))
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.TeacherID }) |

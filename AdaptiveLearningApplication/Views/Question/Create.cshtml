@@ -85,6 +85,14 @@
             @Html.ValidationMessageFor(model => model.DifficultyLevel,"",new { @class = "alert-danger" })
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QuizID, "Quiz",new { @class = "control-label" })
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("QuizID", String.Empty)
+            @Html.ValidationMessageFor(model => model.QuizID,"",new { @class = "alert-danger" })
+        </div>
+
         <p>
             <input type="submit" value="Create" />
         </p>

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AdaptiveLearningApplication.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -16,6 +18,7 @@ namespace AdaptiveLearningApplication
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<AdaptiveLearningContext>(new AdaptiveLearningContextInitializer());
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

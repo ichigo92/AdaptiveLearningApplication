@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AdaptiveLearningApplication.Models;
+using AdaptiveLearningApplication.ViewModel;
 
 namespace AdaptiveLearningApplication.Controllers
 {
@@ -69,7 +70,20 @@ namespace AdaptiveLearningApplication.Controllers
             {
                 return HttpNotFound();
             }
-            return View(teacher);
+            var courseTeachersViewModel = new CourseTeachersViewModel
+            {
+                Teacher = db.Teacher.Include(i => i.Course).First(i => i.TeacherID == id),
+            };
+            if (courseTeachersViewModel.Teacher == null)
+                return HttpNotFound();
+            var allCourseList = db.Course.ToList();
+            courseTeachersViewModel.AllCourses = allCourseList.Select(o => new SelectListItem
+            {
+                Text = o.CourseName,
+                Value = o.CourseID.ToString()
+            });
+            
+            return View(courseTeachersViewModel);
         }
 
         //

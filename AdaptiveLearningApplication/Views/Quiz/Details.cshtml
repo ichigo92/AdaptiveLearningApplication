@@ -52,6 +52,7 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.QuizID }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.QuizID })
+    @*@Html.ActionLink("Add Questions", "Create", "Question",new {id = Model.QuizID},new ) *@
     @Html.ActionLink("Back to List", "Index")
 </p>
