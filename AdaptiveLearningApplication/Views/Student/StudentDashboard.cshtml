@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "StudentDashboard";
+}
+
+<h2>Student Dashboard</h2>
+<div class="row" style="margin-bottom:473px;">
+    <div class="col col-md-2">
+    </div>
+    <div style="margin-top:25px;" class="col col-md-6">
+        <div class="col col-md-3  panel panel-success">
+            <div class="panel-body" style="margin-left: 36px; cursor:pointer">
+                <div class="row">
+                    <div class="col">
+                        <i class="fa fa-plus fa-5x" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    @Html.ActionLink("Take Quiz", "TakeQuiz", "Quiz")
+                </div>
+            </div>
+        </div>
+  </div>
+  <div class="col col-md-2">
+  </div>
+</div>

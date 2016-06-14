@@ -5,13 +5,13 @@ namespace AdaptiveLearningApplication.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class StudentTeacherCourseRelationshipAdded : IMigrationMetadata
+    public sealed partial class QuestionQuizOptionsFix : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(StudentTeacherCourseRelationshipAdded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(QuestionQuizOptionsFix));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606121114198_StudentTeacherCourseRelationshipAdded"; }
+            get { return "201606132105016_QuestionQuizOptionsFix"; }
         }
         
         string IMigrationMetadata.Source

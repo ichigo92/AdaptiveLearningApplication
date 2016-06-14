@@ -1,0 +1,48 @@
+﻿@model AdaptiveLearningApplication.Models.QuizModel
+
+@{
+    ViewBag.Title = "Take Quiz";
+}
+
+@Html.Hidden("Id", Model.QuizID )
+
+<h2>@Html.DisplayNameFor(model => model.QuizName)</h2>
+
+@using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        foreach (var question in Model.Questions){
+            {Html.RenderPartial("_DisplayQuestion",question);}
+        }
+
+        <input type="submit" id="allSubmit" value="Submit" />
+}
+
+@section Scripts
+{
+<script type="text/javascript">
+
+    $("#allSubmit").click(function () {
+        var model = { AnswerSelected: $('input[name=op]:checked').val() }
+        console.log(AnswerSelected);
+        
+        $.ajax({
+            url:"QuizController/TakeQuiz",
+            method:"POST",
+            data:model,
+            success:function(res){
+        
+            },
+            error:(function(err){
+            console.log(err.responseText);
+        })
+    
+    })
+
+ })
+
+
+</script>
+}

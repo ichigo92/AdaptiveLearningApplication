@@ -21,38 +21,7 @@
             @Html.ValidationMessageFor(model => model.Question,"",new { @class = "alert-danger" })
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.QuestionOptionOne,new { @class = "control-label" })
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.QuestionOptionOne)
-            @Html.ValidationMessageFor(model => model.QuestionOptionOne,"",new { @class = "alert-danger" })
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.QuestionOptionTwo,new { @class = "control-label" })
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.QuestionOptionTwo)
-            @Html.ValidationMessageFor(model => model.QuestionOptionTwo,"",new { @class = "alert-danger" })
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.QuestionOptionThree,new { @class = "control-label" })
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.QuestionOptionThree)
-            @Html.ValidationMessageFor(model => model.QuestionOptionThree,"",new { @class = "alert-danger" })
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.QuestionOptionFour,new { @class = "control-label" })
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.QuestionOptionFour)
-            @Html.ValidationMessageFor(model => model.QuestionOptionFour,"",new { @class = "alert-danger" })
-        </div>
-
+        
         <div class="editor-label">
             @Html.LabelFor(model => model.Answer,new { @class = "control-label" })
         </div>
@@ -61,13 +30,6 @@
             @Html.ValidationMessageFor(model => model.Answer,"",new { @class = "alert-danger" })
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Subject,new { @class = "control-label" })
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Subject)
-            @Html.ValidationMessageFor(model => model.Subject,"",new { @class = "alert-danger" })
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Marks,new { @class = "control-label" })

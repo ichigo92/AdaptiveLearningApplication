@@ -1,0 +1,29 @@
+﻿@model AdaptiveLearningApplication.Models.QuestionOption
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>QuestionOption</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QuestionOptionStatement)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionOptionStatement)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Question.Question)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Question.Question)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.QuestionOptionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

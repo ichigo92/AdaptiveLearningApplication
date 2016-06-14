@@ -119,6 +119,13 @@ namespace AdaptiveLearningApplication.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult StudentDashboard()
+        {
+            ViewBag.Message = "Your Student Dashboard page.";
+
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

@@ -1,0 +1,9 @@
+﻿@model AdaptiveLearningApplication.Models.QuestionOption
+
+
+    @*<div class="radio-inline">
+        @Html.RadioButton("op",Model.QuestionOptionStatement)
+        @Html.Label(Model.QuestionOptionStatement)
+    </div>*@
+
+    <label class="radio-inline" >@Html.RadioButton("op", Model.QuestionOptionStatement, false, new { @id ="radSelected" }) @Model.QuestionOptionStatement</label>

@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AdaptiveLearningApplication.Models;
-using AdaptiveLearningApplication.ViewModel;
 
 namespace AdaptiveLearningApplication.Controllers
 {
@@ -19,7 +18,8 @@ namespace AdaptiveLearningApplication.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Teacher.ToList());
+            var teacher = db.Teacher.Include(t => t.Course);
+            return View(teacher.ToList());
         }
 
         //
@@ -40,6 +40,7 @@ namespace AdaptiveLearningApplication.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName");
             return View();
         }
 
@@ -57,6 +58,7 @@ namespace AdaptiveLearningApplication.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName", teacher.CourseID);
             return View(teacher);
         }
 
@@ -70,20 +72,8 @@ namespace AdaptiveLearningApplication.Controllers
             {
                 return HttpNotFound();
             }
-            var courseTeachersViewModel = new CourseTeachersViewModel
-            {
-                Teacher = db.Teacher.Include(i => i.Course).First(i => i.TeacherID == id),
-            };
-            if (courseTeachersViewModel.Teacher == null)
-                return HttpNotFound();
-            var allCourseList = db.Course.ToList();
-            courseTeachersViewModel.AllCourses = allCourseList.Select(o => new SelectListItem
-            {
-                Text = o.CourseName,
-                Value = o.CourseID.ToString()
-            });
-            
-            return View(courseTeachersViewModel);
+            ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName", teacher.CourseID);
+            return View(teacher);
         }
 
         //
@@ -99,6 +89,7 @@ namespace AdaptiveLearningApplication.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName", teacher.CourseID);
             return View(teacher);
         }
 

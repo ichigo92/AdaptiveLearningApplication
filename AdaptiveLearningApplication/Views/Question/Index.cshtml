@@ -25,24 +25,18 @@
         <th>
             @Html.DisplayNameFor(model => model.Question)
         </th>
+        
+        @*@foreach (var option in Model.QuestionOptions){
         <th>
-            @Html.DisplayNameFor(model => model.QuestionOptionOne)
+            @Html.DisplayNameFor(option.QuestionOptionStatement)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuestionOptionTwo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuestionOptionThree)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuestionOptionFour)
-        </th>
+        }*@
         <th>
             @Html.DisplayNameFor(model => model.Answer)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Subject)
-        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.QuestionOptions.QuestionOptionStatement)
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Marks)
         </th>
@@ -60,24 +54,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.Question)
         </td>
+        @*@foreach (var option in item.QuestionOptions){
         <td>
-            @Html.DisplayFor(modelItem => item.QuestionOptionOne)
+            @Html.DisplayFor(modelItem => option.QuestionOptionStatement)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuestionOptionTwo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuestionOptionThree)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuestionOptionFour)
-        </td>
+        }*@
         <td>
             @Html.DisplayFor(modelItem => item.Answer)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Subject)
-        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.Marks)
         </td>

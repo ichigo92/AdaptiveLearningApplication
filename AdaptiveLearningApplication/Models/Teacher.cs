@@ -25,8 +25,9 @@ namespace AdaptiveLearningApplication.Models
         [Required]
         [Display(Name = "Gender", Prompt = "Gender")]
         public string TeacherGender { get; set; }
-        
-        public virtual ICollection<Course> Course { get; set; }
+
+        public int CourseID { get; set; }
+        public virtual Course Course { get; set; }
 
     }
 }

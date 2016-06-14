@@ -21,5 +21,7 @@ namespace AdaptiveLearningApplication.Models
         public virtual ICollection<Teacher> Teacher { get; set; }
 
         public List<Student> Students { get; set; }
+
+        public List<QuizModel> Quiz { get; set; }
     }
 }

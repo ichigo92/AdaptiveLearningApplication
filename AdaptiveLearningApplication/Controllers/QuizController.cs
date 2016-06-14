@@ -115,6 +115,44 @@ namespace AdaptiveLearningApplication.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult TakeQuiz(int id = 0)
+        {
+            QuizModel quizmodel = db.Quiz.Find(id);
+            quizmodel.Questions = db.QuestionPool.Where(m=>m.QuizID == id).ToList();
+            foreach(var question in quizmodel.Questions){
+               question.QuestionOptions = db.QuestionOption.Where(k => k.QuestionID == question.QuestionID).ToList();
+            }
+            if (quizmodel == null)
+            {
+                return HttpNotFound();
+            }
+            //ViewBag.QuestionID = new SelectList(db.QuestionPool, "QuestionID", "Question", quizmodel.Questions);
+            return PartialView("TakeQuiz",quizmodel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult TakeQuiz(QuizViewModel quizviewmodel)
+        {
+            if (ModelState.IsValid)
+            {
+                //Compares the answers then finds the Question from the QuestionPool and Adds Marks
+                if (quizviewmodel.Question.Answer == quizviewmodel.AnswerSelected)
+                {
+                    db.QuestionPool.Find(quizviewmodel.Question.QuestionID).Marks = 1;
+                }
+                else
+                {
+                    db.QuestionPool.Find(quizviewmodel.Question.QuestionID).Marks = 0;
+                }
+                db.SaveChanges();
+                return RedirectToAction("Create", "QuestionPool", new { id = quizviewmodel.Quiz.QuizID });
+                //return RedirectToAction("Index");
+            }
+
+            return View(quizviewmodel);
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

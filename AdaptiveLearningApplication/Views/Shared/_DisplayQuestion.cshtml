@@ -1,0 +1,49 @@
+﻿@model AdaptiveLearningApplication.Models.QuestionPoolModel
+
+
+
+    @*<div class="display-label">
+         @Html.DisplayNameFor(model => model.Question)
+    </div>*@
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Question)
+        <span class="display-field" style="margin-left:100px;">
+            (@Html.DisplayFor(model => model.Marks))
+        </span>
+    </div>
+
+
+    @foreach (var options in Model.QuestionOptions){
+        {Html.RenderPartial("_DisplayOptions",options);}
+    }
+
+
+   @* <div class="display-label">
+         @Html.DisplayNameFor(model => model.Answer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Answer)
+    </div>*@
+    @Html.Hidden("Answer",Model.Answer)
+
+    @*<span class="display-label">
+         @Html.DisplayNameFor(model => model.Marks)
+    </span>*@
+
+@*    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DifficultyLevel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DifficultyLevel)
+    </div>*@
+
+    @*<div class="display-label">
+         @Html.DisplayNameFor(model => model.QuizID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuizID)
+    </div>*@
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.QuestionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

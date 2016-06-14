@@ -23,6 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.TeacherGender)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.CourseName)
+        </th>
         <th></th>
     </tr>
 
@@ -41,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.TeacherGender)
         </td>
         <td>
-            @Html.ListBox("Id", new SelectList(item.Course,"CourseID","CourseName"))
+            @Html.DisplayFor(modelItem => item.Course.CourseName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.TeacherID }) |
