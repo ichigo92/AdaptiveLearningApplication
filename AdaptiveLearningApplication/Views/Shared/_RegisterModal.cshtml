@@ -98,14 +98,21 @@
                 <span style="font-size: 16px;">
                     <strong>
                         <form action="">
-                            <input type="radio" id="r_admin" name="r_rad" value="admin">
-                            ADMIN<br>
+                            @*@Html.RadioButton("r_rad",Model.LoginType)*@
+                            @Html.RadioButtonFor(model=> model.LoginType,"Admin")
+                            @Html.Label("ADMIN")
+                            @*<input type="radio" id="r_admin" name="r_rad" value="admin">
+                            ADMIN<br>*@
                             <hr />
-                            <input type="radio" id="r_student" name="r_rad" value="student">
-                            STUDENT<br>
+                            @Html.RadioButtonFor(model=> model.LoginType,"Student")
+                            @Html.Label("STUDENT")
+                            @*<input type="radio" id="r_student" name="r_rad" value="student">
+                            STUDENT<br>*@
                             <hr />
-                            <input type="radio" id="r_faculty" name="r_rad" value="faculty">
-                            FACULTY
+                            @Html.RadioButtonFor(model=> model.LoginType,"Teacher")
+                            @Html.Label("FACULTY")
+                            @*<input type="radio" id="r_faculty" name="r_rad" value="faculty">
+                            FACULTY*@
                         </form>
                     </strong>
                     <hr />

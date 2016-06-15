@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "UploadFile";
+}
+
+<h2>UploadFile</h2>
+@using (Html.BeginForm ("UploadFile",  
+                        "Teacher",  
+                        FormMethod.Post,  
+                        new { enctype = "multipart/form-data" }))  
+{                    
+    <label for="file">Upload File:</label>  
+    <input type="file" name="file" id="file"/><br><br>  
+    <input type="submit" value="Upload Image"/>  
+    <br><br>  
+    @ViewBag.Message  
+}
+
+@using (Html.BeginForm("Upload", "Teacher", FormMethod.Post, 
+    new { enctype = "multipart/form-data" } )) 
+ {
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend>Upload a file</legend>
+        <div class="editor-field">
+            @Html.TextBox("file", "", new { type = "file" })    
+        </div>
+       <div class="editor-field">
+            <input type="submit" value="Upload" />
+        </div>
+    </fieldset>
+}

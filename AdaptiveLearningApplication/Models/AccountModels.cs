@@ -28,8 +28,8 @@ namespace AdaptiveLearningApplication.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        //[Display(AutoGenerateField = false)]
-        //public string LoginType { get; set; }
+        [Display(AutoGenerateField = false)]
+        public string LoginType { get; set; }
     }
 
     public class RegisterExternalLoginModel
@@ -77,6 +77,7 @@ namespace AdaptiveLearningApplication.Models
 
     public class RegisterModel
     {
+
         [Required]
         [Display(Name = "First Name", Prompt = "First Name")]
         public string FirstName { get; set; }
@@ -91,8 +92,8 @@ namespace AdaptiveLearningApplication.Models
         public string Email { get; set; }
 
         //[Display(AutoGenerateField = false)]
-        //[ScaffoldColumn(false)]
-        //public string LoginType { get; set; }
+        [ScaffoldColumn(false)]
+        public string LoginType { get; set; }
 
         [Required]
         [Display(Name = "Username", Prompt = "Username")]

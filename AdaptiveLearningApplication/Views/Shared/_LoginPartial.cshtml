@@ -11,7 +11,7 @@
 @*    </ul><!--end-login-nav-->*@
     
 }
-else
+else if(Roles.IsUserInRole("admin"))
 {
     <li>@Html.ActionLink("STUDENT DASHBOARD", "StudentDashboard", "Student")</li> 
     <li>@Html.ActionLink("ADMIN DASHBOARD", "AdminDashboard", "Home")</li>
@@ -27,6 +27,41 @@ else
     
    
 }
+else if(Roles.IsUserInRole("teacher"))
+{
+    
+    <li>@Html.ActionLink("TEACHER DASHBOARD", "TeacherDashboard", "Home")</li>     
+    <li><a><span class="glyphicon glyphicon-user"></span>&nbsp;WELCOME&nbsp;@User.Identity.Name.ToUpper()</a></li>
+    <li style="margin-top:17px">@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })){
+        @Html.AntiForgeryToken()
+        <a href="javascript:document.getElementById('logoutForm').submit()" id="logout">LOG OUT</a>
+        }
+
+    </li>
+}
+
+
+
+else if(Roles.IsUserInRole("student")){
+
+
+    <li>@Html.ActionLink("STUDENT DASHBOARD", "StudentDashboard", "Student")</li> 
+    <li style="margin-top:17px">@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })){
+        @Html.AntiForgeryToken()
+        <a href="javascript:document.getElementById('logoutForm').submit()" id="logout">LOG OUT</a>
+        }
+
+    </li>
+
+}
+else{
+    
+    <li><a href="#faculty-sec">SIGNIN</a></li>
+    <li><a href="#course-sec">SIGNUP</a></li>
+
+}
+
+
 @*@if (Request.IsAuthenticated) {
     <text>
         Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!

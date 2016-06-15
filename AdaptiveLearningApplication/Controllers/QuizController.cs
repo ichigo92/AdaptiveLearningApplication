@@ -89,6 +89,11 @@ namespace AdaptiveLearningApplication.Controllers
             return View(quizmodel);
         }
 
+        public ActionResult AttemptQuiz()
+        {
+            return View(db.Quiz.ToList());
+        }
+
         //
         // GET: /Quiz/Delete/5
 

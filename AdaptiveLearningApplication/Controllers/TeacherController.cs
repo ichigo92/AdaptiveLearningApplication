@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AdaptiveLearningApplication.Models;
+using System.IO;
 
 namespace AdaptiveLearningApplication.Controllers
 {
@@ -35,14 +36,82 @@ namespace AdaptiveLearningApplication.Controllers
             return View(teacher);
         }
 
-        //
-        // GET: /Teacher/Create
+        //public ActionResult UploadFile()
+        //{
 
-        public ActionResult Create()
-        {
-            ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName");
-            return View();
-        }
+        //    return View();
+        //}
+        
+        //[HttpPost]
+        //public ActionResult UploadFile(HttpPostedFileBase file)
+        //{
+        //    if (file != null && file.ContentLength > 0)
+        //        try
+        //        {
+        //            string path = Path.Combine(Server.MapPath("~/App_Data/Materials"),
+        //                                       Path.GetFileName(file.FileName));
+        //            file.SaveAs(path);
+        //            ViewBag.Message = "File uploaded successfully";
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            ViewBag.Message = "ERROR:" + ex.Message.ToString();
+        //        }
+        //    else
+        //    {
+        //        ViewBag.Message = "You have not specified a file.";
+        //    }
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public ActionResult Upload(HttpPostedFileBase file)
+        //{
+        //    try
+        //    {
+        //        if (file.ContentLength > 0)
+        //        {
+        //            var fileName = Path.GetFileName(file.FileName);
+        //            var path = Path.Combine(Server.MapPath("~/App_Data/Uploads"), fileName);
+        //            file.SaveAs(path);
+        //        }
+        //        ViewBag.Message = "Upload successful";
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        ViewBag.Message = "Upload failed";
+        //        return RedirectToAction("Uploads");
+        //    }
+        //}
+
+        //public ActionResult Downloads()
+        //{
+        //    var dir = new System.IO.DirectoryInfo(Server.MapPath("~/App_Data/Uploads"));
+        //    System.IO.FileInfo[] fileNames = dir.GetFiles("*.*");
+        //    List<string> items = new List<string>();
+
+        //    foreach (var file in fileNames)
+        //    {
+        //        items.Add(file.Name);
+        //    }
+
+        //    return View(items);
+        //} 
+
+        //public FileResult Download(string ImageName)
+        //{
+        //     return File("~/App_Data/Uploads" + ImageName, System.Net.Mime.MediaTypeNames.Application.Octet);
+        //}
+
+        ////
+        //// GET: /Teacher/Create
+
+        //public ActionResult Create()
+        //{
+        //    ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName");
+        //    return View();
+        //}
 
         //
         // POST: /Teacher/Create

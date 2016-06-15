@@ -268,3 +268,10 @@ h1::after {
     color:#fff;
     font-size:15px;
 }
+
+.field-validation-error{
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: calibri;
+}

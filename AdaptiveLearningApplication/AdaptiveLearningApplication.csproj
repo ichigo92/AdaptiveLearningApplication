@@ -323,6 +323,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\AdaptiveLearningApplication.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -407,6 +408,12 @@
     <Content Include="Views\QuestionOption\Edit.cshtml" />
     <Content Include="Views\QuestionOption\Delete.cshtml" />
     <Content Include="Views\Student\StudentDashboard.cshtml" />
+    <Content Include="Views\Quiz\AttemptQuiz.cshtml" />
+    <Content Include="Views\Account\RoleAddToUser.cshtml" />
+    <Content Include="Views\Account\RoleCreate.cshtml" />
+    <Content Include="Views\Account\RoleIndex.cshtml" />
+    <Content Include="Views\Teacher\UploadFile.cshtml" />
+    <Content Include="Views\Teacher\Downloads.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
