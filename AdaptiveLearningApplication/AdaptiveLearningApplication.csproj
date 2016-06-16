@@ -282,8 +282,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Database_Scripts\AdaptiveLearningApplication.Models.AdaptiveLearningContext.dbo.sql" />
-    <Content Include="Database_Scripts\script.sql" />
+    <Content Include="Database_Scripts\AdaptiveLearningApplication.Models.AdaptiveLearningContext.sql" />
+    <Content Include="Database_Scripts\AdaptiveLearningApplication.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\123.jpg" />
