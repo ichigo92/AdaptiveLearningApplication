@@ -53,8 +53,8 @@ namespace AdaptiveLearningApplication.Controllers
             {
                 db.Quiz.Add(quizmodel);
                 db.SaveChanges();
-                return RedirectToAction("Create", "QuestionPool", new { id = quizmodel.QuizID });
-                //return RedirectToAction("Index");
+                //return RedirectToAction("Create", "QuestionPool", new { id = quizmodel.QuizID });
+                return RedirectToAction("Index");
             }
 
             return View(quizmodel);

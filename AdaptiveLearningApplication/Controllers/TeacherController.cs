@@ -23,6 +23,7 @@ namespace AdaptiveLearningApplication.Controllers
             return View(teacher.ToList());
         }
 
+
         //
         // GET: /Teacher/Details/5
 
@@ -36,54 +37,68 @@ namespace AdaptiveLearningApplication.Controllers
             return View(teacher);
         }
 
+        public ActionResult TeacherDashboard()
+        {
+            ViewBag.Message = "Your Teacher Dashboard page.";
+
+            return View();
+        }
+
+        public ActionResult UploadFile()
+        {
+            ViewBag.Message = "Your Upload page.";
+
+            return View();
+        }
+
         //public ActionResult UploadFile()
         //{
 
         //    return View();
         //}
-        
-        //[HttpPost]
-        //public ActionResult UploadFile(HttpPostedFileBase file)
-        //{
-        //    if (file != null && file.ContentLength > 0)
-        //        try
-        //        {
-        //            string path = Path.Combine(Server.MapPath("~/App_Data/Materials"),
-        //                                       Path.GetFileName(file.FileName));
-        //            file.SaveAs(path);
-        //            ViewBag.Message = "File uploaded successfully";
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            ViewBag.Message = "ERROR:" + ex.Message.ToString();
-        //        }
-        //    else
-        //    {
-        //        ViewBag.Message = "You have not specified a file.";
-        //    }
-        //    return View();
-        //}
 
-        //[HttpPost]
-        //public ActionResult Upload(HttpPostedFileBase file)
-        //{
-        //    try
-        //    {
-        //        if (file.ContentLength > 0)
-        //        {
-        //            var fileName = Path.GetFileName(file.FileName);
-        //            var path = Path.Combine(Server.MapPath("~/App_Data/Uploads"), fileName);
-        //            file.SaveAs(path);
-        //        }
-        //        ViewBag.Message = "Upload successful";
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        ViewBag.Message = "Upload failed";
-        //        return RedirectToAction("Uploads");
-        //    }
-        //}
+        [HttpPost]
+        public ActionResult UploadFile(HttpPostedFileBase file)
+        {
+            if (file != null && file.ContentLength > 0)
+                try
+                {
+                    string path = Path.Combine(Server.MapPath("~/Materials"),
+                                               Path.GetFileName(file.FileName));
+                    file.SaveAs(path);
+                    ViewBag.Message = "File uploaded successfully";
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Message = "ERROR:" + ex.Message.ToString();
+                }
+            else
+            {
+                ViewBag.Message = "You have not specified a file.";
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase file)
+        {
+            try
+            {
+                if (file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Uploads"), fileName);
+                    file.SaveAs(path);
+                }
+                ViewBag.Message = "Upload successful";
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                ViewBag.Message = "Upload failed";
+                return RedirectToAction("Uploads");
+            }
+        }
 
         //public ActionResult Downloads()
         //{

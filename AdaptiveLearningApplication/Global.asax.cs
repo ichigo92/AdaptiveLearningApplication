@@ -18,7 +18,7 @@ namespace AdaptiveLearningApplication
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<AdaptiveLearningContext>(new AdaptiveLearningContextInitializer());
+            //Database.SetInitializer<AdaptiveLearningContext>(new AdaptiveLearningContextInitializer());
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

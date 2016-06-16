@@ -56,8 +56,13 @@ else if(Roles.IsUserInRole("student")){
 }
 else{
     
-    <li><a href="#faculty-sec">SIGNIN</a></li>
-    <li><a href="#course-sec">SIGNUP</a></li>
+    <li><a><span class="glyphicon glyphicon-user"></span>&nbsp;WELCOME&nbsp;@User.Identity.Name.ToUpper()</a></li>
+    <li style="margin-top:17px">@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })){
+        @Html.AntiForgeryToken()
+        <a href="javascript:document.getElementById('logoutForm').submit()" id="logout">LOG OUT</a>
+        }
+
+    </li>
 
 }
 

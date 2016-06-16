@@ -25,7 +25,7 @@
 <script type="text/javascript">
 
     $("#allSubmit").click(function () {
-        var model = { AnswerSelected: $('input[name=op]:checked').val() }
+        var model = { AnswerSelected: $('input[name=op]:checked').val(), QuizModel:$('Id').val(),}
         console.log(AnswerSelected);
         
         $.ajax({
