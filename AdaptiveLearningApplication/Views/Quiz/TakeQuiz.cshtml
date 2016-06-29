@@ -1,39 +1,145 @@
-﻿@model AdaptiveLearningApplication.Models.QuizModel
+﻿@using AdaptiveLearningApplication.Models
+@{
+    var question = (QuestionPoolModel)ViewData["Question"];
+    var quiz = (QuizModel)ViewData["Quiz"];
+    var course = (Course)ViewData["Course"];
+    var i = ViewData["Index"];
+    var count = ViewData["Count"];
+    var dl = Session["DifficultyLvl"];
+    var noqa = Session["NoOfQuestionsAsked"];
+    ViewBag.Title = "Result";
+    var teacher = course.Teacher.Where(c=>c.CourseID == course.CourseID).FirstOrDefault();
+}
 
+
+<h2>@quiz.QuizName</h2>
+@*<h3 id="teacherName">Teacher: @teacher.TeacherFirstName @teacher.TeacherLastName</h3>*@
+<h3 id="courseName">Course: @course.CourseName</h3>
+<hr />
+
+@using(Html.BeginForm("TakeQuiz", "Quiz",FormMethod.Get))
+{   
+    
+
+    <h4>Q.@question.Question</h4>
+    <label class="radio-inline">@Html.RadioButton("op", question.OptionOne, false)  @question.OptionOne</label>
+    <label class="radio-inline">@Html.RadioButton("op", question.OptionTwo, false)  @question.OptionTwo</label> 
+    <label class="radio-inline">@Html.RadioButton("op", question.OptionThree, false) @question.OptionThree</label> 
+    <label class="radio-inline">@Html.RadioButton("op", question.OptionFour, false) @question.OptionFour</label>
+
+    <br /><br />
+    <input type="submit" value="Submit" />
+    
+    @Html.Hidden("id",quiz.QuizID)
+    @Html.Hidden("cid", course.CourseID)
+    @Html.Hidden("qid",question.QuestionID)
+    <input type="hidden" id="index" name="index" value="@i">
+    <input type="hidden" id="count" name="count" value="@count">
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model AdaptiveLearningApplication.Models.QuizModel
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
 @{
     ViewBag.Title = "Take Quiz";
 }
 
-@Html.Hidden("Id", Model.QuizID )
+@Html.Hidden("Id", Model.QuizID)
+@{int count = 0;}
+
+<div style="margin-top:100px; margin-bottom:400px;">
 
 <h2>@Html.DisplayNameFor(model => model.QuizName)</h2>
-
 @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
-
-        foreach (var question in Model.Questions){
-            {Html.RenderPartial("_DisplayQuestion",question);}
-        }
-
-        <input type="submit" id="allSubmit" value="Submit" />
-}
-
-@section Scripts
 {
-<script type="text/javascript">
 
-    $("#allSubmit").click(function () {
-        var model = { AnswerSelected: $('input[name=op]:checked').val(), QuizModel:$('Id').val(),}
-        console.log(AnswerSelected);
+    
+    
+    
+        var question = Model.Questions.Where(l=> l.DifficultyLevel ==1).ToList();
+       
+    
+    
+       @* for (int i = 0; i < question.Count; i++){
+        <div class="display-field">
+            @question[i].Question
+        </div>
+    
+        foreach (var options in question[i].QuestionOptions){
+            <label class="radio-inline" >@Html.RadioButton("op"+i, options.QuestionOptionStatement, false, new { @id ="radSelected" }) @options.QuestionOptionStatement</label>
+        }
+        
+        @Html.Hidden("Answer"+i,question[i].Answer)
+        }*@
+        
+        @*<input type="button" id="allSubmit" value="Submit" />
+}
+    @{count++;}
+    @Html.Hidden("count", count)
+</div>
+
+<script type="text/javascript">
+    var answers = new Array();
+
+    $('#allSubmit').click(function () {
+        var answer = $('input[name=op]:checked').val();
+        answers.push(answer);
+        console.log(answer);
+        console.log(answers);
+        var id = @Model.QuizID*@
+        @*console.log(id);
+        var count = $('#count').val();
+        console.log('count: ' + $('#count').val());
+
+        $.ajax({
+            url: "/Quiz/TakeQuiz/"+id+"/"+count,
+            method: "GET",
+            success:function(res){
+                console.log(model);
+            },
+            error:(function(err){
+                console.log(err.responseText);
+            })
+
+       })
+
+    })*@
+
+    @*$("#allSubmit").click(function () {
+        console.log("Help me!!");
+        var model = { Quiz: ['@Model.QuizID', '@Model.QuizName'],Questions: '@Model.Questions' , AnswerSelected: $('input[name=op]:checked').val() }
+        console.log(model);
         
         $.ajax({
-            url:"QuizController/TakeQuiz",
+            url:"/Quiz/TakeQuiz",
             method:"POST",
             data:model,
             success:function(res){
-        
+                console.log(model);
             },
             error:(function(err){
             console.log(err.responseText);
@@ -41,8 +147,7 @@
     
     })
 
- })
+ })*@
 
 
-</script>
-}
+@*</script>*@

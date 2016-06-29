@@ -1,0 +1,52 @@
+﻿<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+
+@{
+    ViewBag.Title = "EnterQuiz";
+}
+
+<h2>EnterQuiz</h2>
+<input type="hidden" id="hdnQuestionID" />
+<input type="button" value="Enter" id="enter" />
+
+<div>
+    <label id="txtQuestion"></label>
+</div>
+
+<input type="text" id="#txtOption" />
+
+
+
+
+
+<script type="text/javascript">
+    $('#enter').click(function () {
+        $('#enter').hide();
+        $.ajax({
+            url: "/Quiz/GetQuestion/1",
+            method: "GET",
+            contentType: "application/json",
+            success: function (question) {
+                console.log(question);
+                console.log(question[0].QuestionStatement);
+                console.log(question[0].QuestionOptions[1]);
+                $('#txtQuestion').text(question[0].QuestionStatement);
+                $('#hdnQuestionID').val(question[0].QuestionID);
+
+                var opt;
+                var opts = question[0].QuestionOptions;
+                for (var i = 0; i < opts.length; i++) {
+                    opt = opts[i];
+                    console.log(opts[i]);
+                    $('#txtOption').val(opt.QuestionOptionStatement);
+                }
+
+            },
+            error: (function (err) {
+                console.log(err.responseText);
+
+            })
+
+        });
+
+    })
+</script>

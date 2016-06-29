@@ -85,5 +85,5 @@ C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplic
 C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.dll
 C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.pdb
 C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.csprojResolveAssemblyReference.cache
-C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.QuestionQuizOptions.resources
-C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.QuestionQuizOptionsFix.resources
+C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.AddedCoursesToQuiz.resources
+C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.BigChanges.resources

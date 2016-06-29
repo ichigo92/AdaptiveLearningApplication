@@ -122,11 +122,11 @@ namespace AdaptiveLearningApplication.Controllers
         ////
         //// GET: /Teacher/Create
 
-        //public ActionResult Create()
-        //{
-        //    ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName");
-        //    return View();
-        //}
+        public ActionResult Create()
+        {
+            ViewBag.CourseID = new SelectList(db.Course, "CourseID", "CourseName");
+            return View();
+        }
 
         //
         // POST: /Teacher/Create

@@ -6,8 +6,66 @@
 
 <h2>AttemptQuiz</h2>
 
-
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <table style="margin-bottom:475px;" class="table table-striped table-bordered table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QuizName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfQuestions)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HighestMarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuizName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfQuestions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HighestMarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseID)
+        </td>
+        <td>
+            @Html.ActionLink("Attempt Quiz", "TakeQuiz", new { id=item.QuizID, cid = item.CourseID,})
+        </td>
+    </tr>
+}
+
+</table>
+
+
+
+
+
+
+@*<table style="margin-bottom:475px;" class="table table-striped table-bordered table-responsive">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.QuizName)
@@ -51,9 +109,9 @@
             @Html.DisplayFor(modelItem => item.CreatedBy)
         </td>
         <td>
-            @Html.ActionLink("Attempt", "TakeQuiz", new { id=item.QuizID })
+            @Html.ActionLink("Attempt", "TakeQuiz", new { id=item.QuizID , cid = item.CourseID })
         </td>
     </tr>
 }
 
-</table>
+</table>*@

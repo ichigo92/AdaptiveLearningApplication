@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "FormResults";
+}
+
+<h2>FormResults</h2>
+@*<p>
+<label>Your name: </label><b>@Html.Encode(ViewData["name"])</b>
+</p>*@
+<p>
+@*<label>Your favorite color: </label><b>@Html.Encode(ViewData["favColor"])</b>*@
+
+<label>Your Chosen Answer: </label><b>@Html.Encode(ViewData["op"])</b>
+<label>Your Quiz ID: </label><b>@Html.Encode(ViewData["id"])</b>
+<label>Your Course ID: </label><b>@Html.Encode(ViewData["cid"])</b>
+<label>Your Question ID: </label><b>@Html.Encode(ViewData["qid"])</b>
+<label>Your Obtained Marks: </label><b>@Html.Encode(ViewData["marks"])</b>
+<label>Your Last Difficulty Level: </label><b>@Html.Encode(Session["DifficultyLvl"])</b>
+<label>Number of Questions Answered: </label><b>@Html.Encode(Session["NoOfQuestionsAsked"])</b>
+<label>Out of All the Questions Taken, You manage to Answer <b>@Html.Encode(Session["CorrectAnswers"])</b> Questions Correcly</label> 
+</p>
+@*@if (ViewData["bookType"].Equals(true))
+{
+    <p>You read more <b>fiction</b> than non-fiction.</p>
+}
+else
+{
+    <p>You read more <b>non-fiction</b> than fiction.</p>
+}
+<label>Your favorite pet:</label> <b>@Html.Encode(ViewData["pet"])</b>*@

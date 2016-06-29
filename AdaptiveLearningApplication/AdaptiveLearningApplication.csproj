@@ -190,6 +190,7 @@
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\QuestionOptionController.cs" />
     <Compile Include="Controllers\QuizController.cs" />
+    <Compile Include="Controllers\QuizViewModelController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -200,19 +201,20 @@
     <Compile Include="Migrations\201606120449396_InitialCreate.Designer.cs">
       <DependentUpon>201606120449396_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606132054212_QuestionQuizOptions.cs" />
-    <Compile Include="Migrations\201606132054212_QuestionQuizOptions.Designer.cs">
-      <DependentUpon>201606132054212_QuestionQuizOptions.cs</DependentUpon>
+    <Compile Include="Migrations\201606261021135_AddedCoursesToQuiz.cs" />
+    <Compile Include="Migrations\201606261021135_AddedCoursesToQuiz.Designer.cs">
+      <DependentUpon>201606261021135_AddedCoursesToQuiz.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201606132105016_QuestionQuizOptionsFix.cs" />
-    <Compile Include="Migrations\201606132105016_QuestionQuizOptionsFix.Designer.cs">
-      <DependentUpon>201606132105016_QuestionQuizOptionsFix.cs</DependentUpon>
+    <Compile Include="Migrations\201606291758011_BigChanges.cs" />
+    <Compile Include="Migrations\201606291758011_BigChanges.Designer.cs">
+      <DependentUpon>201606291758011_BigChanges.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AdaptiveLearningContext.cs" />
     <Compile Include="Models\AdaptiveLearningContextInitializer.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\FilteredQuestions.cs" />
     <Compile Include="Models\QuestionOption.cs" />
     <Compile Include="Models\QuestionPoolModel.cs" />
     <Compile Include="Models\QuizModel.cs" />
@@ -418,6 +420,11 @@
     <Content Include="Views\Account\RoleIndex.cshtml" />
     <Content Include="Views\Teacher\UploadFile.cshtml" />
     <Content Include="Views\Teacher\Downloads.cshtml" />
+    <Content Include="Views\QuizViewModel\TakeQuiz.cshtml" />
+    <Content Include="Views\Quiz\_AttemptQuiz.cshtml" />
+    <Content Include="Views\Quiz\EnteredQuiz.cshtml" />
+    <Content Include="Views\Quiz\EnterQuiz.cshtml" />
+    <Content Include="Views\Quiz\FormResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -434,11 +441,11 @@
     <EmbeddedResource Include="Migrations\201606120449396_InitialCreate.resx">
       <DependentUpon>201606120449396_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606132054212_QuestionQuizOptions.resx">
-      <DependentUpon>201606132054212_QuestionQuizOptions.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606261021135_AddedCoursesToQuiz.resx">
+      <DependentUpon>201606261021135_AddedCoursesToQuiz.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606132105016_QuestionQuizOptionsFix.resx">
-      <DependentUpon>201606132105016_QuestionQuizOptionsFix.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606291758011_BigChanges.resx">
+      <DependentUpon>201606291758011_BigChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

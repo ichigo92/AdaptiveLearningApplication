@@ -13,10 +13,11 @@ namespace AdaptiveLearningApplication
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{id}/{count}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional, count = UrlParameter.Optional }
             );
         }
     }

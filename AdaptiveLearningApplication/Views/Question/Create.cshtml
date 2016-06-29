@@ -30,13 +30,43 @@
             @Html.ValidationMessageFor(model => model.Answer,"",new { @class = "alert-danger" })
         </div>
 
-
         <div class="editor-label">
             @Html.LabelFor(model => model.Marks,new { @class = "control-label" })
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Marks)
             @Html.ValidationMessageFor(model => model.Marks,"",new { @class = "alert-danger" })
+        </div>
+         <div class="editor-label">
+            @Html.LabelFor(model => model.OptionOne)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OptionOne)
+            @Html.ValidationMessageFor(model => model.OptionOne)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OptionTwo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OptionTwo)
+            @Html.ValidationMessageFor(model => model.OptionTwo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OptionThree)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OptionThree)
+            @Html.ValidationMessageFor(model => model.OptionThree)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OptionFour)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OptionFour)
+            @Html.ValidationMessageFor(model => model.OptionFour)
         </div>
 
         <div class="editor-label">

@@ -16,6 +16,20 @@ namespace AdaptiveLearningApplication.Models
         public int Marks { get; set; }
         public int DifficultyLevel { get; set; }
 
+        public double ObtainedMarks { get; set; }
+
+        [Display(Name = "Option One", Prompt = "Option One")]
+        public string OptionOne { get; set; }
+
+        [Display(Name = "Option Two", Prompt = "Option Two")]
+        public string OptionTwo { get; set; }
+
+        [Display(Name = "Option Three", Prompt = "Option Three")]
+        public string OptionThree { get; set; }
+
+        [Display(Name = "Option Four", Prompt = "Option Four")]
+        public string OptionFour { get; set; }
+
         public List<QuestionOption> QuestionOptions { get; set; }
         
         public int QuizID { get; set; }

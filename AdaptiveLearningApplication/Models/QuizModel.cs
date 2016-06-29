@@ -9,6 +9,12 @@ namespace AdaptiveLearningApplication.Models
 {
     public class QuizModel
     {
+
+        public QuizModel()
+        {
+            NumberOfQuestions = 30;
+        }
+
         [Key]
         [Required]
         public int QuizID { get; set; }
@@ -47,6 +53,9 @@ namespace AdaptiveLearningApplication.Models
 
 
         public List<QuestionPoolModel> Questions { get; set; }
+
+        public int CourseID { get; set; }
+        public virtual Course Courses { get; set; }
     }
 
 }
