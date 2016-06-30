@@ -209,6 +209,22 @@
     <Compile Include="Migrations\201606291758011_BigChanges.Designer.cs">
       <DependentUpon>201606291758011_BigChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606301648005_AddedValidationToDifficultyLvl.cs" />
+    <Compile Include="Migrations\201606301648005_AddedValidationToDifficultyLvl.Designer.cs">
+      <DependentUpon>201606301648005_AddedValidationToDifficultyLvl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606301727278_MadeChangesToQuestionModel.cs" />
+    <Compile Include="Migrations\201606301727278_MadeChangesToQuestionModel.Designer.cs">
+      <DependentUpon>201606301727278_MadeChangesToQuestionModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606301741556_ChangedLogicForMarks.cs" />
+    <Compile Include="Migrations\201606301741556_ChangedLogicForMarks.Designer.cs">
+      <DependentUpon>201606301741556_ChangedLogicForMarks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606301853512_ChangedQuizModel.cs" />
+    <Compile Include="Migrations\201606301853512_ChangedQuizModel.Designer.cs">
+      <DependentUpon>201606301853512_ChangedQuizModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AdaptiveLearningContext.cs" />
@@ -446,6 +462,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606291758011_BigChanges.resx">
       <DependentUpon>201606291758011_BigChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606301648005_AddedValidationToDifficultyLvl.resx">
+      <DependentUpon>201606301648005_AddedValidationToDifficultyLvl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606301727278_MadeChangesToQuestionModel.resx">
+      <DependentUpon>201606301727278_MadeChangesToQuestionModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606301741556_ChangedLogicForMarks.resx">
+      <DependentUpon>201606301741556_ChangedLogicForMarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606301853512_ChangedQuizModel.resx">
+      <DependentUpon>201606301853512_ChangedQuizModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

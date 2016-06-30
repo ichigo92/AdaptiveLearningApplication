@@ -87,3 +87,7 @@ C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplic
 C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.csprojResolveAssemblyReference.cache
 C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.AddedCoursesToQuiz.resources
 C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.BigChanges.resources
+C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.AddedValidationToDifficultyLvl.resources
+C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.MadeChangesToQuestionModel.resources
+C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.ChangedLogicForMarks.resources
+C:\Users\Mystery 92\Documents\Visual Studio 2012\Projects\AdaptiveLearningApplication\AdaptiveLearningApplication\obj\Debug\AdaptiveLearningApplication.Migrations.ChangedQuizModel.resources

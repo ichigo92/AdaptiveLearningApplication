@@ -1,5 +1,10 @@
-﻿@{
+﻿@using AdaptiveLearningApplication.Models
+@{
     ViewBag.Title = "TeacherDashboard";
+    
+    var UserName = Session["UserName"].ToString();
+
+    
 }
 
 <h2>TeacherDashboard</h2>
@@ -54,11 +59,11 @@
                 </div>
                 <div class="row">
                     @*@Html.ActionLink("Update Profile", "Edit", "Teacher",new { id=1 })*@
-                    <a href="../Teacher/Edit/4">Update Profile</a>
+                    <a href="../Teacher/Edit/">Update Profile</a>
                 </div>
             </div>
         </div>
-        <div class="col col-md-3 col-md-offset-1  panel panel-success">
+        @*<div class="col col-md-3 col-md-offset-1  panel panel-success">
             <div class="panel-body" style="margin-left: 36px; cursor:pointer">
                 <div class="row">
                     <div class="col">
@@ -69,8 +74,8 @@
                     @Html.ActionLink("Add Options", "Create", "QuestionOption")
                 </div>
             </div>
-        </div>
-
+        </div>*@
+        <input type="text" value="@UserName" />
 
 
     </div>

@@ -37,6 +37,8 @@ namespace AdaptiveLearningApplication.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
+                
+                Session["UserName"] = User.Identity.Name;
                 return RedirectToLocal(returnUrl);
             }
 

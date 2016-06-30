@@ -53,6 +53,14 @@ namespace AdaptiveLearningApplication.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                if (questionpoolmodel.DifficultyLevel == 1)
+                    questionpoolmodel.Marks = 0.75;
+                if(questionpoolmodel.DifficultyLevel == 2)
+                    questionpoolmodel.Marks = 1.0;
+                if(questionpoolmodel.DifficultyLevel == 3) 
+                    questionpoolmodel.Marks = 1.25;  
+
                 db.QuestionPool.Add(questionpoolmodel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -70,6 +78,13 @@ namespace AdaptiveLearningApplication.Controllers
             QuestionPoolModel questionpoolmodel = db.QuestionPool.Find(id);
             if (questionpoolmodel == null)
             {
+                if (questionpoolmodel.DifficultyLevel == 1)
+                    questionpoolmodel.Marks = 0.75;
+                if (questionpoolmodel.DifficultyLevel == 2)
+                    questionpoolmodel.Marks = 1.0;
+                if (questionpoolmodel.DifficultyLevel == 3)
+                    questionpoolmodel.Marks = 1.25; 
+
                 return HttpNotFound();
             }
             ViewBag.QuizID = new SelectList(db.Quiz, "QuizID", "QuizName", questionpoolmodel.QuizID);

@@ -11,22 +11,35 @@ namespace AdaptiveLearningApplication.Models
     {
         [Key]
         public int QuestionID { get; set; }
+
+        [Required]
         public string Question { get; set; }
+        
+        [Required]
         public string Answer { get; set; }
-        public int Marks { get; set; }
+
+
+        public double Marks { get; set; }
+
+        [Required]
+        [Range(1,3)]
         public int DifficultyLevel { get; set; }
 
         public double ObtainedMarks { get; set; }
 
+        [Required]
         [Display(Name = "Option One", Prompt = "Option One")]
         public string OptionOne { get; set; }
 
+        [Required]
         [Display(Name = "Option Two", Prompt = "Option Two")]
         public string OptionTwo { get; set; }
 
+        [Required]
         [Display(Name = "Option Three", Prompt = "Option Three")]
         public string OptionThree { get; set; }
 
+        [Required]
         [Display(Name = "Option Four", Prompt = "Option Four")]
         public string OptionFour { get; set; }
 

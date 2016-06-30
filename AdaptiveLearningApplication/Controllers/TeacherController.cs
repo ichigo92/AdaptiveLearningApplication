@@ -13,6 +13,7 @@ namespace AdaptiveLearningApplication.Controllers
     public class TeacherController : Controller
     {
         private AdaptiveLearningContext db = new AdaptiveLearningContext();
+        private UsersContext uc = new UsersContext();
 
         //
         // GET: /Teacher/
@@ -151,7 +152,14 @@ namespace AdaptiveLearningApplication.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Teacher teacher = db.Teacher.Find(id);
+            //Teacher teacher = db.Teacher.Find(id);
+            string username = Session["UserName"].ToString();
+
+            
+            var userprofile = uc.UserProfiles.Where(i=>i.UserName == username).FirstOrDefault();
+            Teacher teacher = db.Teacher.Where(t=>t.TeacherID == userprofile.UserId).FirstOrDefault();
+            Session["FirstName"] = teacher.TeacherFirstName;
+
             if (teacher == null)
             {
                 return HttpNotFound();

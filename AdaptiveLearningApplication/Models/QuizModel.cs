@@ -13,6 +13,7 @@ namespace AdaptiveLearningApplication.Models
         public QuizModel()
         {
             NumberOfQuestions = 30;
+            CreatedDate = DateTime.Now;
         }
 
         [Key]
@@ -43,7 +44,7 @@ namespace AdaptiveLearningApplication.Models
         [Display(Name = "Marks")]
         public int HighestMarks { get; set; }
         
-        [Required]
+
         [Display(Name = "Duration")]
         public string Duration { get; set; }
 
