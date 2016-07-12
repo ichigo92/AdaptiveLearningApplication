@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "TeacherDashboard";
     
-    var UserName = Session["UserName"].ToString();
+   // var UserName = Session["UserName"].ToString();
 
     
 }
@@ -58,8 +58,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    @*@Html.ActionLink("Update Profile", "Edit", "Teacher",new { id=1 })*@
-                    <a href="../Teacher/Edit/">Update Profile</a>
+                    @Html.ActionLink("Update Profile", "Manage", "Account")
+                    <!--new { id=1 }-->
+                    @*<a href="../Teacher/Edit/">Update Profile</a>*@
                 </div>
             </div>
         </div>
@@ -75,7 +76,7 @@
                 </div>
             </div>
         </div>*@
-        <input type="text" value="@UserName" />
+        @*<input type="text" value="@User.Identity.Name" />*@
 
 
     </div>

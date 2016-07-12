@@ -51,8 +51,10 @@ namespace AdaptiveLearningApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(QuizModel quizmodel)
         {
+            quizmodel.CreatedBy = User.Identity.Name;
             if (ModelState.IsValid)
             {
+                
                 db.Quiz.Add(quizmodel);
                 db.SaveChanges();
                 //return RedirectToAction("Create", "QuestionPool", new { id = quizmodel.QuizID });
@@ -83,8 +85,10 @@ namespace AdaptiveLearningApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(QuizModel quizmodel)
         {
+            quizmodel.CreatedBy = User.Identity.Name;
             if (ModelState.IsValid)
             {
+               
                 db.Entry(quizmodel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -265,7 +269,7 @@ namespace AdaptiveLearningApplication.Controllers
                         ViewData["Question"] = quest[index];
                     else
                         //return View("FormResults/"+id+"&op="+op+"&cid="+cid+"&qid="+index);
-                        return RedirectToAction("ProcessResult", "Student", new { id = id, cid = cid, op = op, qid = index });
+                        return RedirectToAction("ProcessResult", "Quiz", new { id = id, cid = cid, op = op, qid = index });
                 }
 
                 //if (count >= 3)
