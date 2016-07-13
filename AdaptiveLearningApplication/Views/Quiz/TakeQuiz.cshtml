@@ -9,6 +9,7 @@
     var noqa = Session["NoOfQuestionsAsked"];
     ViewBag.Title = "Result";
     var teacher = course.Teacher.Where(c=>c.CourseID == course.CourseID).FirstOrDefault();
+    var totalQuestions = Session["TotalQuestions"];
 }
 
 
@@ -33,8 +34,9 @@
     @Html.Hidden("id",quiz.QuizID)
     @Html.Hidden("cid", course.CourseID)
     @Html.Hidden("qid",question.QuestionID)
-    <input type="hidden" id="index" name="index" value="@i">
-    <input type="hidden" id="count" name="count" value="@count">
+    <input type="hidden" id="index" name="index" value="@i" />
+    <input type="hidden" id="count" name="count" value="@count" />
+    <input type="hidden" id="totalquestions" name="totalquestions" value="@totalQuestions" />
 
 }
 

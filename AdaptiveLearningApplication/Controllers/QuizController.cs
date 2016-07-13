@@ -199,17 +199,21 @@ namespace AdaptiveLearningApplication.Controllers
                 Session["DifficultyLvl"] = 2;
                 Session["CorrectAnswers"] = 0;
                 Session["AnsweredWrong"] = 0;
+                Session["TotalQuestions"] = 0;
             }
-
+            int totalquestions = (int)Session["TotalQuestions"];
             var quiz = db.Quiz.Where(q => q.QuizID == id && q.CourseID == cid).Include(c => c.Courses).Include(q=>q.Questions).FirstOrDefault();
             var course = db.Course.Where(c => c.CourseID == cid).Include(t => t.Teacher).Include(s => s.Students).FirstOrDefault();
             //var question = db.Questions.Where(c => c.CourseID == cid && c.DifficultyLevel == 2).ToList();
+            totalquestions++;
             var quest = GetQuestion((int)Session["DifficultyLvl"], cid);
             int numberofquestionsasked = (int)Session["NoOfQuestionsAsked"];
             int correctanswers = (int)Session["CorrectAnswers"];
+            
             int answeredwrong = (int)Session["AnsweredWrong"];
             if (op != null)
             {
+                Session["TotalQuestions"] = totalquestions;
                 numberofquestionsasked++;
                 Session["NoOfQuestionsAsked"] = numberofquestionsasked;
                 if (op.Equals(quest[index].Answer))
@@ -282,6 +286,8 @@ namespace AdaptiveLearningApplication.Controllers
             ViewData["Question"] = quest[index];
             ViewData["Quiz"] = quiz;
             ViewData["Course"] = course;
+            Session["CourseName"] = course.CourseName;
+            
             return View("TakeQuiz");
 
 
@@ -308,6 +314,9 @@ namespace AdaptiveLearningApplication.Controllers
 
         public List<QuestionPoolModel> GetQuestion(int difficultylevel, int courseid)
         {
+            //int totalQuestions = (int) Session["TotalQuestions"];
+            //totalQuestions++;
+            //Session["TotalQuestions"] = totalQuestions;
             return db.QuestionPool.Where(c => c.Quiz.CourseID == courseid && c.DifficultyLevel == difficultylevel).ToList();
         }
 
