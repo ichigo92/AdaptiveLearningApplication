@@ -1,8 +1,9 @@
 ﻿@{
     ViewBag.Title = "FormResults";
-    int correctanswers = (int)Session["CorrectAnswers"];
-    int totalquestions = (int)Session["TotalQuestions"];
-    var percentage = (correctanswers / totalquestions)*100;
+    //int correctanswers = (int)Session["CorrectAnswers"];
+    //int totalquestions = (int)Session["TotalQuestions"];
+    //var percentage = (correctanswers / totalquestions)*100;
+    
 }
 
 <h2>FormResults</h2>
@@ -10,17 +11,27 @@
 <label>Your name: </label><b>@Html.Encode(ViewData["name"])</b>
 </p>*@
 
+<div class="panel panel-success" style="margin-bottom:400px;margin-top:50px;" >
+        <div class="panel-heading">
+            <h3 class="text-center panel-title">@Html.Encode(ViewData["coursename"])</h3>
+        </div>
+        <div class="panel-body">
+            @*<label>Your Quiz ID: </label><b>@Html.Encode(ViewData["id"])</b><br />
+            <label>Your Course ID: </label><b>@Html.Encode(ViewData["cid"])</b><br />*@
+            <label>Quiz Name: </label><b>@Html.Encode(ViewData["quizname"])</b><br />
+            @*<label>Course Name: </label><b>@Html.Encode(ViewData["coursename"])</b><br />*@
+            <label>Your Obtained Marks: </label><b>@Html.Encode(ViewData["marks"])</b><br />
+            <label>Your Last Difficulty Level: </label><b>@Html.Encode(Session["DifficultyLvl"])</b><br />
+            <label>Number of Questions Answered: </label><b>@Html.Encode(Session["NoOfQuestionsAsked"])</b><br />
+            @*<label>Out of the <b>@Html.Encode(Session["TotalQuestions"])</b> Questions Taken, You manage to Answer <b>@Html.Encode(Session["CorrectAnswers"])</b> Questions Correcly</label><br />*@
+            <label>Your Percentage is: <b>@Html.Encode(ViewData["percentage"]) %</b></label>
+            
+        </div>
+    </div>
+
+
 @*<label>Your favorite color: </label><b>@Html.Encode(ViewData["favColor"])</b>*@
 
-<label>Your Chosen Answer: </label><b></b><br />
-<label>Your Quiz ID: </label><b>@Html.Encode(ViewData["id"])</b><br />
-<label>Your Course ID: </label><b>@Html.Encode(ViewData["cid"])</b><br />
-<label>Your Course Name: </label><b>@Html.Encode(Session["CourseName"])</b><br />
-<label>Your Obtained Marks: </label><b>@Html.Encode(ViewData["marks"])</b><br />
-<label>Your Last Difficulty Level: </label><b>@Html.Encode(Session["DifficultyLvl"])</b><br />
-<label>Number of Questions Answered: </label><b>@Html.Encode(Session["NoOfQuestionsAsked"])</b><br />
-@*<label>Out of the <b>@Html.Encode(Session["TotalQuestions"])</b> Questions Taken, You manage to Answer <b>@Html.Encode(Session["CorrectAnswers"])</b> Questions Correcly</label><br />*@
-<label>Your Percentage is: <b>@percentage %</b></label>
 
 @*@if (ViewData["bookType"].Equals(true))
 {

@@ -13,23 +13,27 @@
 }
 
 
-<h2>@quiz.QuizName</h2>
+<h2 class="text-center" style="margin-top:80px;">@quiz.QuizName</h2>
 @*<h3 id="teacherName">Teacher: @teacher.TeacherFirstName @teacher.TeacherLastName</h3>*@
-<h3 id="courseName">Course: @course.CourseName</h3>
+<h3 class="text-center" id="courseName">Course: @course.CourseName</h3>
 <hr />
 
 @using(Html.BeginForm("TakeQuiz", "Quiz",FormMethod.Get))
 {   
     
-
-    <h4>Q.@question.Question</h4>
-    <label class="radio-inline">@Html.RadioButton("op", question.OptionOne, false)  @question.OptionOne</label>
-    <label class="radio-inline">@Html.RadioButton("op", question.OptionTwo, false)  @question.OptionTwo</label> 
-    <label class="radio-inline">@Html.RadioButton("op", question.OptionThree, false) @question.OptionThree</label> 
-    <label class="radio-inline">@Html.RadioButton("op", question.OptionFour, false) @question.OptionFour</label>
-
-    <br /><br />
-    <input type="submit" value="Submit" />
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Q.@question.Question</h3>
+        </div>
+        <div class="panel-body">
+            <label class="radio-inline">@Html.RadioButton("op", question.OptionOne, false)  @question.OptionOne</label>
+            <label class="radio-inline">@Html.RadioButton("op", question.OptionTwo, false)  @question.OptionTwo</label> 
+            <label class="radio-inline">@Html.RadioButton("op", question.OptionThree, false) @question.OptionThree</label> 
+            <label class="radio-inline">@Html.RadioButton("op", question.OptionFour, false) @question.OptionFour</label>
+            
+        </div>
+    </div>
+    <input type="submit" value="Submit" style="margin-bottom:400px" />
     
     @Html.Hidden("id",quiz.QuizID)
     @Html.Hidden("cid", course.CourseID)
@@ -37,6 +41,7 @@
     <input type="hidden" id="index" name="index" value="@i" />
     <input type="hidden" id="count" name="count" value="@count" />
     <input type="hidden" id="totalquestions" name="totalquestions" value="@totalQuestions" />
+    
 
 }
 

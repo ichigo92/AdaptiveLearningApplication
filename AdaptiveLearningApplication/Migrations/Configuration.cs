@@ -9,7 +9,7 @@ namespace AdaptiveLearningApplication.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(AdaptiveLearningApplication.Models.AdaptiveLearningContext context)

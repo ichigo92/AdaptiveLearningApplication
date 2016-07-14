@@ -170,20 +170,37 @@ namespace AdaptiveLearningApplication.Controllers
             var CourseID = Convert.ToInt32(cid);
             var quiz = db.Quiz.Where(q => q.QuizID == QuizID && q.CourseID == CourseID).Include(c => c.Courses).Include(q => q.Questions).FirstOrDefault();
             var course = db.Course.Where(c => c.CourseID == CourseID).Include(t => t.Teacher).FirstOrDefault();
-            var question = db.QuestionPool.Where(c => c.QuizID == QuizID && c.DifficultyLevel == 2).ToList();
+            var question = db.QuestionPool.Where(c => c.QuizID == QuizID).ToList();
+            var student = db.Student.Find(1);
             var ObtainedMarks = 0.0;
+            var TotalMarks = 0.0;
             foreach (var quest in question)
             {
                 ObtainedMarks = ObtainedMarks + quest.ObtainedMarks;
+                TotalMarks = TotalMarks + quest.Marks;
             }
 
 
             ViewData["op"] = op;
             ViewData["id"] = id;
+            ViewData["quizname"] = quiz.QuizName;
+            ViewData["coursename"] = course.CourseName;
             ViewData["cid"] = cid;
             ViewData["qid"] = qid;
             ViewData["marks"] = ObtainedMarks;
+            ViewData["percentage"] = (ObtainedMarks / TotalMarks) * 100;
 
+            //int correctanswers = (int)Session["CorrectAnswers"];
+            //int totalquestions = (int)Session["TotalQuestions"];
+            //var percentage = (correctanswers / totalquestions)*100;
+
+            Result result = new Result();
+            result.StudentID = 1;
+            result.Student = student;
+            result.MarksObtained = (int)ObtainedMarks;
+            result.PercentageObtained = (ObtainedMarks/TotalMarks)*100;
+            db.Result.Add(result);
+            db.SaveChanges();
 
 
             return View("FormResults");

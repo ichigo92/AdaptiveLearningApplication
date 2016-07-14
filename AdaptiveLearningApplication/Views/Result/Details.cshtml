@@ -1,0 +1,36 @@
+﻿@model AdaptiveLearningApplication.Models.Result
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Result</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MarksObtained)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MarksObtained)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PercentageObtained)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PercentageObtained)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Student.StudentFirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Student.StudentFirstName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ResultID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
